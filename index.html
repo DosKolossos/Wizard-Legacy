@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Wizard Legacy</title>
+    <script src="js/models/drawable-object.class.js"></script>
+    <script src="js/models/movable-object.class.js"></script>
+    <script src="js/models/pickable-object.class.js"></script>
+    <script src="js/models/character.class.js"></script>
+    <script src="js/models/enemy.class.js"></script>
+    <script src="js/models/cloud.class.js"></script>
+    <script src="js/models/status-bar.class.js"></script>
+    <script src="js/models/background-object.class.js"></script>
+    <script src="js/models/background-object-towers.class.js"></script>
+    <script src="js/models/keyboard.class.js"></script>
+    <script src="js/models/world.class.js"></script>
+    <script src="js/models/level.class.js"></script>
+    <script src="js/models/endboss.class.js"></script>
+    <script src="js/models/spells.class.js"></script>
+
+    <script src="js/homescreen.js"></script>
+    <script src="js/impressum.js"></script>
+    <script src="Level/level1.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/endscreen.js"></script>
+    <script src="js/overlay.js"></script>
+    <script src="js/pause-menu.js"></script>
+    <script src="js/new-level.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body onload="initiateHomeScreen()">
+    <div id="portraitMode" class="d-none">
+        <img src="data/img/mobileButtons/rotate.png">
+        <span id="rotateText">Rotate your device to continue!</span>
+    </div>
+    <h1 id="Headline">Wizard Legacy</h1>
+    <div id="titleScreen">
+
+    </div>
+
+    <div id="imprint" class="d-none"></div>
+
+    <div id="Endscreen" class="d-none">
+
+    </div>
+    <canvas id="canvas" width="720" height="480"></canvas>
+    <img class="audio-icon" id="audioSwitcher" onclick="musicSwitcher()" src="data/img/items/soundoff.png">
+
+    <div style="background-color: aliceblue; display: flex; flex-direction: column; align-items: center;">
+
+    </div>
+    <div id="abilityBar"></div>
+    <div class="hud d-none" id="mobileButtons">
+        <div class="panel">
+            <div class="panel-wrapper" id="panelLeft">
+                <button id="btnleft"></button>
+                <button id="btnright"></button>
+                <button id="btnjump"></button>
+            </div>
+            <div class="panel-wrapper" id="panelRight">
+                <button id="btnSpellE"></button>
+                <button id="btnSpellW" class="disabled"></button>
+                <button id="btnSpellR" class="disabled"></button>
+            </div>
+        </div>
+        <div class="panel" id="panelControl">
+            <button id="mobileSoundOffButton" onclick="startMusic()"></button>
+            <button id="mobileSoundOnButton" onclick="stopMusic()"></button>
+            <button id="mobileESCButton"></button>
+        </div>
+    </div>
+    <h3 onclick="openImprint()">Impressum</h3>
+    <footer></footer>
+</body>
+
+</html>

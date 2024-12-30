@@ -1,0 +1,764 @@
+@font-face {
+    font-family: 'PR Celtic Narrow';
+    src: url("data/fonts/Celtic.ttf");
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    background-image: url('data/backgrounds/bodybg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'PR Celtic Narrow', sans-serif;
+    font-size: 64px;
+    color: white;
+    margin: 0;
+    text-shadow: 4px 4px #000000;
+}
+
+canvas {
+    background-color: black;
+    border: solid 3px black;
+}
+
+#Endscreen {
+    top: 110px;
+    width: 720px;
+    height: 480px;
+    background-color: black;
+    position: absolute;
+    z-index: 1;
+    color: aliceblue;
+    font-family: "PR Celtic Narrow", sans-serif;
+    font-size: 32px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+
+#Content {
+    position: absolute;
+    display: flex;
+}
+
+#Endtext {
+    display: flex;
+    font-family: "PR Celtic Narrow";
+    font-size: 88px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#content {
+    color: aliceblue;
+}
+
+#Stats {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: relative;
+    top: 128px;
+    font-size: 32px;
+}
+
+.pause-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pause-bottom-wrapper {
+    display: flex;
+    top: -39px;
+    position: relative;
+    width: 90%;
+    justify-content: space-around;
+    font-size: smaller;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.pause-bottom-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pause-statistics {
+    display: flex;
+    cursor: default;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 32px;
+    align-items: center;
+    gap: 8px;
+}
+
+.pause-statistics-icon {
+    cursor: auto;
+    height: 40px;
+    width: 40px;
+}
+
+.function-init {
+    display: flex;
+    cursor: pointer;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 32px;
+    align-items: center;
+    gap: 8px;
+}
+
+.function-init:hover {
+    transition: 0.5s;
+    color: rgb(100, 129, 0);
+
+    .continue-icon {
+        transition: 0.5s;
+        filter: invert(60%) sepia(30%) saturate(6556%) hue-rotate(53deg) brightness(96%) contrast(115%);
+    }
+}
+
+.function-init:not(:hover) {
+    transition: 0.5s;
+    color: aliceblue;
+
+    .continue-icon {
+        transition: 0.5s;
+    }
+}
+
+.audio-icon {
+    position: absolute;
+    top: 120px;
+    z-index: 10;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.continue-icon {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.level-screen-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.level-up-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-level-font {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.picture-positioner {
+    display: flex;
+    justify-content: center;
+}
+
+#learnedAbilityIcon {
+    position: relative;
+    top: -11px;
+    width: 152.4px;
+    height: 180px;
+}
+
+#learnedAbility {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    position: relative;
+    top: -11px;
+    justify-content: center;
+}
+
+.top-minus-11px {
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.overlay-bottom {
+    display: flex;
+    width: 400px;
+    height: 67px;
+    background-color: silver;
+    align-items: center;
+    border: solid 2px black;
+    justify-content: center;
+}
+
+.overlay-bottom-profile {
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+}
+
+.overlay-bottom-action-row {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.spell-icon {
+    width: 50.8px;
+    height: 60px;
+}
+
+.disabled {
+    filter: grayscale(1);
+}
+
+#titleScreen {
+    top: 110px;
+    position: absolute;
+    display: flex;
+    background-color: rgb(0, 0, 36);
+    width: 720px;
+    height: 480px;
+}
+
+.title-screen-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+.title-image {
+    width: 464.4px;
+    height: 450px;
+    max-width: 100%;
+    max-width: 100vh;
+}
+
+.title-screen-right {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-screen-right-play {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    background-color: rgb(34, 34, 224);
+    color: white;
+    padding: 8px;
+    width: 120px;
+    height: 50px;
+    border-radius: 8px;
+    gap: 4px;
+    z-index: 10;
+}
+
+.title-screen-right-play:hover {
+    transition: 0.5s;
+    background-color: rgb(130, 130, 218);
+}
+
+.title-screen-right-play:not(:hover) {
+    transition: 0.5s;
+}
+
+.title-screen-play-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.title-screen-right-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: space-around;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    border-color: white;
+}
+
+#btnSpellE {
+    background-image: url('data/img/mobileButtons/e.png');
+    background-position: center;
+}
+
+#btnSpellW {
+    background-image: url('data/img/mobileButtons/w.png');
+    background-position: center;
+}
+
+#btnSpellR {
+    background-image: url('data/img/mobileButtons/r.png');
+    background-position: center;
+}
+
+#btnleft {
+    background-image: url('data/img/mobileButtons/left.png');
+    background-position: center;
+}
+
+#btnright {
+    background-image: url('data/img/mobileButtons/right.png');
+    background-position: center;
+}
+
+#btnjump {
+    background-image: url('data/img/mobileButtons/jump.png');
+    background-position: center;
+}
+
+#mobileSoundOffButton {
+    background-image: url('data/img/items/soundoff.png');
+    background-position: center;
+    background-color: #000000;
+    position: absolute;
+    right: 60px;
+    z-index: 4;
+}
+
+#mobileESCButton {
+    background-image: url('data/img/mobileButtons/pause.png');
+    background-position: center;
+    z-index: 2;
+}
+
+#mobileSoundOnButton {
+    background-image: url('data/img/items/soundon.png');
+    background-position: center;
+    background-color: #000000;
+    z-index: 3;
+}
+
+.panel {
+    width: 100%;
+    display: flex;
+}
+
+.hud {
+    width: 100%;
+    display: none;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    height: 60px;
+    font-size: 40px;
+    color: white;
+    background-color: black;
+    justify-content: center;
+    opacity: 0.6;
+    bottom: 0;
+}
+
+h3 {
+    position: absolute;
+    bottom: 12px;
+    margin-bottom: 2px;
+    filter: opacity(1) !important;
+    cursor: pointer;
+    color: white;
+    z-index: 1;
+    font-size: 24px;
+    font-weight: 200;
+}
+
+h3:hover {
+    transition: 1s;
+    color: rgb(243, 250, 144);
+}
+
+h3:not(:hover) {
+    transition: 1s;
+}
+
+#imprint {
+    display: flex;
+    flex-direction: column;
+    height: 480px;
+    width: 720px;
+    position: relative;
+    background-color: blue;
+    color: aliceblue;
+    z-index: 998;
+    border: solid 2px black;
+
+}
+
+#imprint a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+#imprintText {
+    left: 20px;
+    position: relative;
+}
+
+#closeImprint {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    height: 30px;
+    width: 30px;
+    background-image: url('data/img/titleimages/closeImprint.png');
+    cursor: pointer;
+}
+
+#portraitMode {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 720px) {
+
+    canvas {
+        width: 100%;
+        height: 100%;
+        border: 0px;
+    }
+
+    footer,
+    h3 {
+        display: none;
+    }
+
+    .title-image {
+        transform: scale(0.7);
+    }
+
+    .title-screen-wrapper {
+        align-items: center;
+    }
+
+    #Endscreen {
+        height: 100%;
+    }
+
+    .pause-image {
+        display: none;
+    }
+
+    .pause-bottom-wrapper {
+        display: flex;
+        top: 0;
+        position: absolute;
+        align-items: flex-end;
+        bottom: 12px;
+    }
+
+    .hud {
+        display: flex;
+        position: absolute;
+        height: 100%;
+    }
+
+    #Headline,
+    .audio-icon,
+    .overlay-bottom {
+        display: none;
+    }
+
+    #titleScreen,
+    #Endscreen {
+        top: 0;
+    }
+
+    #titleScreen {
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+    }
+
+    .panel {
+        width: 100%;
+    }
+
+    #panelLeft {
+        position: relative !important;
+        left: 8px;
+        bottom: 4px;
+        height: 100%;
+        display: flex;
+        align-items: end;
+        gap: 4px;
+    }
+
+    #panelRight {
+        position: absolute !important;
+        right: 8px;
+        bottom: 4px;
+        height: 100%;
+        display: flex;
+        align-items: end;
+        gap: 4px;
+    }
+
+    #panelControl {
+        display: flex;
+        position: absolute !important;
+        right: 4px;
+        width: 100%;
+        justify-content: end;
+    }
+
+    footer {
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-height: 480px) {
+    canvas {
+        height: 100vh;
+        width: 100%;
+        border: none;
+    }
+
+    #Endtext {
+        position: relative;
+        top: -50px;
+    }
+
+    #learnedAbilityIcon {
+        transform: scale(0.7);
+    }
+
+    #Headline,
+    .audio-icon,
+    footer,
+    h3,
+    .overlay-bottom {
+        display: none;
+    }
+
+    .hud {
+        display: flex;
+        position: absolute;
+        height: 100%;
+    }
+
+    #titleScreen {
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        top: 0;
+    }
+
+    .title-screen-wrapper {
+        width: 100%;
+        align-items: center;
+        margin-right: 25px;
+        overflow: hidden;
+    }
+
+    .title-image {
+        transform: scale(0.6);
+        overflow: hidden;
+    }
+
+    #mobileSoundOnButton {
+        right: 60px;
+        position: absolute;
+    }
+
+    #panelLeft {
+        display: flex;
+        align-items: end;
+        position: relative;
+        left: 12px;
+        bottom: 6px;
+        gap: 12px;
+
+    }
+
+    #panelRight {
+        display: flex;
+        align-items: end;
+        right: 12px;
+        position: absolute !important;
+        justify-content: end;
+        bottom: 6px;
+        gap: 12px;
+    }
+
+    #panelControl {
+        position: relative;
+        justify-content: end;
+        right: 12px;
+        top: 6px;
+        height: 25%;
+    }
+
+    #Endscreen {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 3;
+    }
+
+    .pause-image {
+        display: none;
+    }
+
+    .pause-menu-wrapper {
+        justify-content: space-around;
+        height: 100%;
+    }
+
+    .pause-bottom-wrapper {
+        top: 0;
+    }
+
+    .pause-bottom-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .level-up-content-row {
+        display: flex;
+        align-items: center;
+        height: 147px;
+    }
+
+    #pressEnter {
+        display: none;
+    }
+
+    #learnedAbility {
+        top: 0;
+    }
+}
+
+@media (pointer: coarse) {
+
+    canvas,
+    #titleScreen,
+    #Endscreen {
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        position: absolute;
+        background-color: rgb(0, 0, 36);
+    }
+
+    .hud {
+        display: flex;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .title-image {
+        z-index: 4;
+    }
+
+    #Headline,
+    footer,
+    h3,
+    #audioSwitcher,
+    .overlay-bottom-action-row {
+        display: none;
+    }
+
+    .title-screen-wrapper {
+        align-items: center;
+    }
+
+    canvas {
+        border: none;
+    }
+
+    #mobileSoundOnButton {
+        position: absolute;
+        right: 60px;
+    }
+
+    #mobileESCButton {
+        position: absolute;
+        right: 0px;
+    }
+
+    #panelLeft{
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+    }
+
+    #panelRight{
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+    }
+}
+
+@media (orientation: portrait) {
+    #portraitMode {
+      display: flex !important;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+    }
+    #portraitMode img{
+        width: 80% !important;
+      }
+      #rotateText{
+        display: flex;
+        position: relative;
+        color: aliceblue;      
+        font-size: 60px;
+    }
+    #Headline,
+    footer,
+    h3,
+    #audioSwitcher,
+    .overlay-bottom-action-row {
+        display: none;
+    }
+
+    html{
+        height: 100%;
+    }
+  }
